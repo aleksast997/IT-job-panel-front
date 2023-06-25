@@ -1,1 +1,116 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$lagoon-primary-blue-palette: (
+  50: #E0F7FB,
+  100: #B2EAF4,
+  200: #80DDEC,
+  300: #4DCFE4,
+  400: #27C4DD,
+  500: #08BAD6,
+  600: #06AAC3,
+  700: #0295A9,
+  800: #008291,
+  900: #005F65,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$lagoon-secondary-blue-palette: (
+  50: #E0F7FA,
+  100: #B3EBF2,
+  200: #81DEEA,
+  300: #50D0E1,
+  400: #2DC7DA,
+  500: #14BDD4,
+  600: #12ADC1,
+  700: #1098A7,
+  800: #0E848F,
+  900: #0A6064,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$lagoon-yelow-palette: (
+  50: #FEF9E2,
+  100: #FEEEB6,
+  200: #FDE388,
+  300: #FDD958,
+  400: #FDD037,
+  500: #FDC625,
+  600: #FDB91E,
+  700: #FDA61A,
+  800: #FC9617,
+  900: #FC780F,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$IT-job-panel-front-primary: mat.define-palette($lagoon-primary-blue-palette, 700);
+$IT-job-panel-front-basic: mat.define-palette($lagoon-secondary-blue-palette, 600);
+$IT-job-panel-front-accent: mat.define-palette($lagoon-yelow-palette, 400);
+
+// The warn palette is optional (defaults to red).
+$IT-job-panel-front-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$IT-job-panel-front-theme: mat.define-light-theme((
+  color: (
+    primary: $IT-job-panel-front-primary,
+    basic: $IT-job-panel-front-basic,
+    accent: $IT-job-panel-front-accent,
+    warn: $IT-job-panel-front-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($IT-job-panel-front-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

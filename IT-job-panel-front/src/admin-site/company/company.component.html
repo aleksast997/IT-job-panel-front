@@ -1,0 +1,10 @@
+<h1>Company Page</h1>
+<div *ngIf="company$ | async as company; else loading">
+  <app-company-card
+  [company]="company"
+  (createCompany)="createCompany($event)"
+></app-company-card>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

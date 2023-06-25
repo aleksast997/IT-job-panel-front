@@ -1,0 +1,67 @@
+<form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+
+  <div class="row justify-content-md-center">
+
+      <mat-form-field appearance="fill">
+        <mat-label for="name">Name</mat-label>
+        <input id="name" type="text" matInput  formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="description">Description</mat-label>
+        <input id="description" matInput formControlName="description">
+      </mat-form-field>
+  </div>
+
+  <div class="row">
+
+      <mat-form-field appearance="fill">
+        <mat-label for="field">Field</mat-label>
+        <input id="field" matInput  formControlName="field">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="employeeNumber">Number of employee</mat-label>
+        <input id="employeeNumber" matInput  formControlName="employeeNumber">
+      </mat-form-field>
+
+  </div>
+
+  <div class="row">
+
+      <mat-form-field appearance="fill">
+        <mat-label for="foundingYear">Year</mat-label>
+        <input id="foundingYear" matInput formControlName="foundingYear">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="email">Enter your email</mat-label>
+        <input id="email"  matInput placeholder="pat@example.com" formControlName="email" >
+      </mat-form-field>
+
+  </div>
+
+
+  <div class="row">
+
+      <mat-form-field appearance="fill">
+        <mat-label for="phoneNumber">Phone number</mat-label>
+        <input id="phoneNumber"  matInput formControlName="phoneNumber" >
+        <mat-hint>Include area code</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="companyHeadquarters">companyHeadquarters</mat-label>
+        <input id="companyHeadquarters" matInput  formControlName="companyHeadquarters">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label for="averageRating">averageRating</mat-label>
+        <input id="averageRating" matInput  formControlName="averageRating">
+      </mat-form-field>
+
+  </div>
+
+  <button mat-raised-button color="accent" type="submit" class="btn btn-primary">Submit</button>
+</form>
+

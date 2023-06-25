@@ -1,0 +1,5 @@
+<app-header></app-header>
+<app-admin-home [hidden]="isCreate"
+[user]="user$ | async"
+(openCompany)="openCompany($event)"></app-admin-home>
+<router-outlet></router-outlet>
